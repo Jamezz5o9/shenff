@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+    file: /scripts/create_app_user_table.sql
+
+  - include:
+    file: /scripts/create_role_table.sql
+
+  - include:
+      file: /scripts/create_token_table.sql

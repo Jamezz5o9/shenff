@@ -1,0 +1,38 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 375154238974-r2baq32epbjjfsc3q5q2789poaigtstm.apps.googleusercontent.com
+            client-secret: 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
+            scope: email, profile
+
+          github:
+            client-id: 9e21b4027ce792c0a4c3
+            client-secret: b1b71219dbc480b7d1d6b4d8d66a26cab0f4ec96
+            scope: user:email, read:user
+
+  datasource:
+    url: jdbc:postgresql://dpg-cjjil3ephtvs73fb06fg-a.oregon-postgres.render.com:5432/taskspace_staging_dev
+    username: taskspace_postgres
+    password: KWXV3j2ryLw0JSRk3Nr1PBuS9oVjRy8y
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    database: postgresql
+
+app:
+  auth:
+    token-secret: 04ca023b39512e46d0c2cf4b48d5aac61d343848vvc87ed4eff225dcf3b0a218739f3897051a057f9b846a69ea2927a587044164b7bae5e1306219d50b588cb1
+    token-expiration: 864000000
+
+  oauth2:
+    authorized-redirect-uris: http://localhost:8080/login/oauth2/code/*
+
+server:
+  port: 8080
